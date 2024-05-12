@@ -12,6 +12,61 @@
   <parameters>
     </parameters>
   <connection>
+    <name>odi</name>
+    <server>159.138.91.210</server>
+    <type>ORACLE</type>
+    <access>Native</access>
+    <database>ODISYS</database>
+    <port>1220</port>
+    <username>XINTL</username>
+    <password>Encrypted 2be98afc83ac68191a018a0588f98aecf</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>1220</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>STRICT_NUMBER_38_INTERPRETATION</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
+  <connection>
     <name>rekon_bsi</name>
     <server>10.0.113.16</server>
     <type>ORACLE</type>
@@ -446,17 +501,17 @@
       <description/>
       <type>SQL</type>
       <attributes/>
-      <sql>INSERT INTO BSI_REKON.SOURCE_TOPUP_DANA
+      <sql>INSERT INTO ODIFIN.SOURCE_TOPUP_DANA
 SELECT
 	*
 FROM
-	BSI_REKON.SOURCE_TOPUP_DANA_TEMP T1
+	ODIFIN.SOURCE_TOPUP_DANA_TEMP T1
 WHERE
 	NOT EXISTS (
 	SELECT
 		*
 	FROM
-		BSI_REKON.SOURCE_TOPUP_DANA T2
+		ODIFIN.SOURCE_TOPUP_DANA T2
 	WHERE
 		T2.TRANSACTIONID = T1.TRANSACTIONID)
 </sql>
@@ -464,7 +519,7 @@ WHERE
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
       <sendOneStatement>F</sendOneStatement>
-      <connection>rekon_bsi</connection>
+      <connection>odi</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -479,7 +534,7 @@ WHERE
       <attributes/>
       <sql>INSERT
 	INTO
-	BSI_REKON.CALCULATE_DANA (VALUE_DT,
+	ODIFIN.CALCULATE_DANA (VALUE_DT,
 	AMOUNT_LCY,
 	TRANS_REFERENCE,
 	PAYMENT_DETAILS,
@@ -507,13 +562,13 @@ WHERE
 		CREDIT_ACCT_NO,
 		KODE_TRX
 FROM
-	BSI_REKON.V_CALCULATE_DANA V
+	ODIFIN.V_CALCULATE_DANA V
 WHERE
 	NOT EXISTS (
 	SELECT
 		*
 	FROM
-		BSI_REKON.CALCULATE_DANA cd
+		ODIFIN.CALCULATE_DANA cd
 	WHERE
 		V.PAYMENT_DETAILS = CD.PAYMENT_DETAILS
 		AND V.AMOUNT_LCY = CD.AMOUNT_LCY
@@ -524,7 +579,7 @@ WHERE
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
       <sendOneStatement>F</sendOneStatement>
-      <connection>rekon_bsi</connection>
+      <connection>odi</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -537,13 +592,13 @@ WHERE
       <description/>
       <type>SQL</type>
       <attributes/>
-      <sql>DELETE FROM BSI_REKON.RESULT_REKON_DANA_T24 
+      <sql>DELETE FROM ODIFIN.RESULT_REKON_DANA_T24 
 WHERE REKON_STATUS_ID = 'UNMATCH' AND TRX_DATE_TIME BETWEEN TO_DATE('${VAL_DATE}', 'yyyy/mm/dd') - 1 AND TO_DATE ('${VAL_DATE}','yyyy/mm/dd') + 1</sql>
       <useVariableSubstitution>T</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
       <sendOneStatement>F</sendOneStatement>
-      <connection>rekon_bsi</connection>
+      <connection>odi</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -556,14 +611,14 @@ WHERE REKON_STATUS_ID = 'UNMATCH' AND TRX_DATE_TIME BETWEEN TO_DATE('${VAL_DATE}
       <description/>
       <type>SQL</type>
       <attributes/>
-      <sql>DELETE FROM BSI_REKON.RESULT_REKON_DANA
+      <sql>DELETE FROM ODIFIN.RESULT_REKON_DANA
 WHERE REKON_STATUS_ID = 'UNMATCH' AND TGL_TRN BETWEEN TO_DATE('${VAL_DATE}', 'yyyy/mm/dd') - 1
 		AND TO_DATE ('${VAL_DATE}','yyyy/mm/dd') + 1</sql>
       <useVariableSubstitution>T</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
       <sendOneStatement>F</sendOneStatement>
-      <connection>rekon_bsi</connection>
+      <connection>odi</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -588,11 +643,11 @@ WHERE REKON_STATUS_ID = 'UNMATCH' AND TGL_TRN BETWEEN TO_DATE('${VAL_DATE}', 'yy
       <description/>
       <type>SFTP</type>
       <attributes/>
-      <servername>10.0.1.154</servername>
-      <serverport>2048</serverport>
-      <username>sftpmis</username>
-      <password>Encrypted 2be98afc86aa7c782fc098e3df3bb9c9b</password>
-      <sftpdirectory>/home/dana</sftpdirectory>
+      <servername>114.119.183.205</servername>
+      <serverport>1928</serverport>
+      <username>devploy</username>
+      <password>Encrypted 2be98afc86aa7f2e4bc1da043eec2fff4</password>
+      <sftpdirectory>/home/apps/www/php53/test</sftpdirectory>
       <targetdirectory>${Internal.Entry.Current.Directory}/file_source</targetdirectory>
       <wildcard>SETTLEMENT_MDRSC1ID_01_${VAL_DATE}.csv</wildcard>
       <remove>N</remove>
@@ -634,7 +689,7 @@ WHERE REKON_STATUS_ID = 'UNMATCH' AND TGL_TRN BETWEEN TO_DATE('${VAL_DATE}', 'yy
       <description/>
       <type>EVAL_TABLE_CONTENT</type>
       <attributes/>
-      <connection>rekon_bsi</connection>
+      <connection>odi</connection>
       <schemaname/>
       <tablename/>
       <success_condition>rows_count_equal</success_condition>
@@ -645,7 +700,7 @@ WHERE REKON_STATUS_ID = 'UNMATCH' AND TGL_TRN BETWEEN TO_DATE('${VAL_DATE}', 'yy
 	TRANSACTIONID,
 	COUNT(TRANSACTIONID) AS TOTAL
 FROM
-	BSI_REKON.SOURCE_TOPUP_DANA_TEMP GROUP BY TRANSACTIONID ) WHERE  TOTAL > 1 AND ROWNUM &lt; 2</custom_sql>
+	ODIFIN.SOURCE_TOPUP_DANA_TEMP GROUP BY TRANSACTIONID ) WHERE  TOTAL > 1 AND ROWNUM &lt; 2</custom_sql>
       <add_rows_result>N</add_rows_result>
       <clear_result_rows>Y</clear_result_rows>
       <parallel>N</parallel>
@@ -699,11 +754,11 @@ FROM
       <description/>
       <type>SFTP</type>
       <attributes/>
-      <servername>10.0.1.154</servername>
-      <serverport>2048</serverport>
-      <username>sftpmis</username>
-      <password>Encrypted 2be98afc86aa7c782fc098e3df3bb9c9b</password>
-      <sftpdirectory>/home/dana</sftpdirectory>
+      <servername>114.119.183.205</servername>
+      <serverport>1928</serverport>
+      <username>devploy</username>
+      <password>Encrypted 2be98afc86aa7f2e4bc1da043eec2fff4</password>
+      <sftpdirectory>/home/apps/www/php53/test</sftpdirectory>
       <targetdirectory>${Internal.Entry.Current.Directory}/file_source</targetdirectory>
       <wildcard>SETTLEMENT_MDRSC1ID_01_${VAL_DATE}_LATEST.csv</wildcard>
       <remove>N</remove>
@@ -731,7 +786,7 @@ FROM
       <description/>
       <type>SQL</type>
       <attributes/>
-      <sql>TRUNCATE TABLE BSI_REKON.SOURCE_TOPUP_DANA_TEMP</sql>
+      <sql>TRUNCATE TABLE ODIFIN.SOURCE_TOPUP_DANA_TEMP</sql>
       <useVariableSubstitution>T</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -782,7 +837,7 @@ FROM
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
       <sendOneStatement>F</sendOneStatement>
-      <connection>rekon_bsi</connection>
+      <connection>odi</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>

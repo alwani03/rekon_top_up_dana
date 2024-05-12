@@ -436,14 +436,14 @@
   <notepads>
   </notepads>
   <connection>
-    <name>rekon_bsi</name>
-    <server>10.0.113.16</server>
+    <name>odi</name>
+    <server>159.138.91.210</server>
     <type>ORACLE</type>
     <access>Native</access>
-    <database>rekondb</database>
-    <port>1521</port>
-    <username>system</username>
-    <password>Encrypted 2be98afc86aa7f2e4a40baf73d297ff8b</password>
+    <database>ODISYS</database>
+    <port>1220</port>
+    <username>XINTL</username>
+    <password>Encrypted 2be98afc83ac68191a018a0588f98aecf</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -462,7 +462,7 @@
       </attribute>
       <attribute>
         <code>PORT_NUMBER</code>
-        <attribute>1521</attribute>
+        <attribute>1220</attribute>
       </attribute>
       <attribute>
         <code>PRESERVE_RESERVED_WORD_CASE</code>
@@ -502,6 +502,98 @@
       <enabled>Y</enabled>
     </hop>
   </order>
+  <step>
+    <name>insert_data_source_tmp</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>odi</connection>
+    <schema>ODIFIN</schema>
+    <table>SOURCE_TOPUP_DANA_TEMP</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>TRANSACTIONID</column_name>
+        <stream_name>TRANSACTIONID</stream_name>
+      </field>
+      <field>
+        <column_name>DANAORDERID</column_name>
+        <stream_name>DANAORDERID</stream_name>
+      </field>
+      <field>
+        <column_name>TRANSACTIONTIME</column_name>
+        <stream_name>TRANSACTIONTIME</stream_name>
+      </field>
+      <field>
+        <column_name>PHONENO</column_name>
+        <stream_name>PHONENO</stream_name>
+      </field>
+      <field>
+        <column_name>STOREID</column_name>
+        <stream_name>STOREID</stream_name>
+      </field>
+      <field>
+        <column_name>POSID</column_name>
+        <stream_name>POSID</stream_name>
+      </field>
+      <field>
+        <column_name>CURRENCY</column_name>
+        <stream_name>CURRENCY</stream_name>
+      </field>
+      <field>
+        <column_name>TRANSACTIONAMOUNT</column_name>
+        <stream_name>TRANSACTIONAMOUNT</stream_name>
+      </field>
+      <field>
+        <column_name>NETCLEARINGAMOUNT</column_name>
+        <stream_name>NETCLEARINGAMOUNT</stream_name>
+      </field>
+      <field>
+        <column_name>FEEAMOUNT</column_name>
+        <stream_name>FEEAMOUNT</stream_name>
+      </field>
+      <field>
+        <column_name>VALUEADDEDTAX</column_name>
+        <stream_name>VALUEADDEDTAX</stream_name>
+      </field>
+      <field>
+        <column_name>WITHHOLDINGTAX</column_name>
+        <stream_name>WITHHOLDINGTAX</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>576</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step>
     <name>change_data_type</name>
     <type>SelectValues</type>
@@ -903,98 +995,6 @@
     </remotesteps>
     <GUI>
       <xloc>200</xloc>
-      <yloc>100</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>insert_data_source_tmp</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>rekon_bsi</connection>
-    <schema>BSI_REKON</schema>
-    <table>SOURCE_TOPUP_DANA_TEMP</table>
-    <commit>1000</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-      <field>
-        <column_name>TRANSACTIONID</column_name>
-        <stream_name>TRANSACTIONID</stream_name>
-      </field>
-      <field>
-        <column_name>DANAORDERID</column_name>
-        <stream_name>DANAORDERID</stream_name>
-      </field>
-      <field>
-        <column_name>TRANSACTIONTIME</column_name>
-        <stream_name>TRANSACTIONTIME</stream_name>
-      </field>
-      <field>
-        <column_name>PHONENO</column_name>
-        <stream_name>PHONENO</stream_name>
-      </field>
-      <field>
-        <column_name>STOREID</column_name>
-        <stream_name>STOREID</stream_name>
-      </field>
-      <field>
-        <column_name>POSID</column_name>
-        <stream_name>POSID</stream_name>
-      </field>
-      <field>
-        <column_name>CURRENCY</column_name>
-        <stream_name>CURRENCY</stream_name>
-      </field>
-      <field>
-        <column_name>TRANSACTIONAMOUNT</column_name>
-        <stream_name>TRANSACTIONAMOUNT</stream_name>
-      </field>
-      <field>
-        <column_name>NETCLEARINGAMOUNT</column_name>
-        <stream_name>NETCLEARINGAMOUNT</stream_name>
-      </field>
-      <field>
-        <column_name>FEEAMOUNT</column_name>
-        <stream_name>FEEAMOUNT</stream_name>
-      </field>
-      <field>
-        <column_name>VALUEADDEDTAX</column_name>
-        <stream_name>VALUEADDEDTAX</stream_name>
-      </field>
-      <field>
-        <column_name>WITHHOLDINGTAX</column_name>
-        <stream_name>WITHHOLDINGTAX</stream_name>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>600</xloc>
       <yloc>100</yloc>
       <draw>Y</draw>
     </GUI>

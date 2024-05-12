@@ -12,14 +12,14 @@
   <parameters>
     </parameters>
   <connection>
-    <name>rekon_bsi</name>
-    <server>10.0.113.16</server>
+    <name>odi</name>
+    <server>159.138.91.210</server>
     <type>ORACLE</type>
     <access>Native</access>
-    <database>rekondb</database>
-    <port>1521</port>
-    <username>system</username>
-    <password>Encrypted 2be98afc86aa7f2e4a40baf73d297ff8b</password>
+    <database>ODISYS</database>
+    <port>1220</port>
+    <username>XINTL</username>
+    <password>Encrypted 2be98afc83ac68191a018a0588f98aecf</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -38,7 +38,7 @@
       </attribute>
       <attribute>
         <code>PORT_NUMBER</code>
-        <attribute>1521</attribute>
+        <attribute>1220</attribute>
       </attribute>
       <attribute>
         <code>PRESERVE_RESERVED_WORD_CASE</code>
@@ -409,7 +409,7 @@
       <attributes/>
       <sql>INSERT
 	INTO
-	BSI_REKON.RESULT_REKON (ID,
+	ODIFIN.RESULT_REKON (ID,
 	REKON_DATE,
 	GROUP_ID,
 	MODUL_ID,
@@ -431,7 +431,7 @@ NULL)</sql>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
       <sendOneStatement>F</sendOneStatement>
-      <connection>rekon_bsi</connection>
+      <connection>odi</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -446,7 +446,7 @@ NULL)</sql>
       <attributes/>
       <sql>INSERT
 	INTO
-	BSI_REKON.RESULT_REKON_DANA rrtd (
+	ODIFIN.RESULT_REKON_DANA rrtd (
 	NO_RESI,
 	TRANSACTION_ID,
 	TRANSACTION_AMOUNT,
@@ -482,13 +482,13 @@ SELECT
 	 NULL UPDATED_AT,
 	 SUBSTR(T1.TRANSACTIONID,-12)
 FROM
-	 BSI_REKON.SOURCE_TOPUP_DANA T1
-LEFT JOIN BSI_REKON.CALCULATE_DANA T2 ON
+	 ODIFIN.SOURCE_TOPUP_DANA T1
+LEFT JOIN ODIFIN.CALCULATE_DANA T2 ON
 	SUBSTR(T2.PAYMENT_DETAILS, 1, 12) = SUBSTR(T1.TRANSACTIONID,-12)
-LEFT JOIN BSI_REKON.FLAG_MATCH_DANA  T3
+LEFT JOIN ODIFIN.FLAG_MATCH_DANA  T3
 	ON SUBSTR(T1.TRANSACTIONID,-12) = T3.NO_RESI
 WHERE  T1.TRANSACTIONTIME BETWEEN  TO_DATE('${VAL_DATE}', 'yyyy/mm/dd') - 1 AND TO_DATE ('${VAL_DATE}', 'yyyy/mm/dd') + 1
-	AND NOT EXISTS(SELECT * FROM BSI_REKON.RESULT_REKON_DANA T3 WHERE T3.TRANSACTION_ID = T1.TRANSACTIONID)
+	AND NOT EXISTS(SELECT * FROM ODIFIN.RESULT_REKON_DANA T3 WHERE T3.TRANSACTION_ID = T1.TRANSACTIONID)
 GROUP BY
 	T1.NETCLEARINGAMOUNT,
 	T1.TRANSACTIONID,
@@ -500,7 +500,7 @@ T3.FLAG_REKON</sql>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
       <sendOneStatement>F</sendOneStatement>
-      <connection>rekon_bsi</connection>
+      <connection>odi</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -513,7 +513,7 @@ T3.FLAG_REKON</sql>
       <description/>
       <type>SQL</type>
       <attributes/>
-      <sql>INSERT INTO BSI_REKON.FLAG_MATCH_DANA(NO_RESI,FLAG_REKON)
+      <sql>INSERT INTO ODIFIN.FLAG_MATCH_DANA(NO_RESI,FLAG_REKON)
 SELECT * FROM (SELECT
 	 SUBSTR(T2.TRANSACTIONID,-12) AS NO_RESI,
 	 CASE
@@ -524,8 +524,8 @@ SELECT * FROM (SELECT
 		ELSE 'UNMATCH'
 	END FLAG_REKON
 FROM
- BSI_REKON.SOURCE_TOPUP_DANA T2
-LEFT JOIN  BSI_REKON.CALCULATE_DANA T1 ON
+ ODIFIN.SOURCE_TOPUP_DANA T2
+LEFT JOIN  ODIFIN.CALCULATE_DANA T1 ON
 	SUBSTR(T1.PAYMENT_DETAILS, 1, 12) = SUBSTR(T2.TRANSACTIONID,-12)
 WHERE
 	T2.TRANSACTIONTIME BETWEEN TO_DATE('${VAL_DATE}', 'yyyy/mm/dd')
@@ -534,10 +534,10 @@ WHERE
 	SELECT
 		*
 	FROM
-		BSI_REKON.RESULT_REKON_DANA T3
+		ODIFIN.RESULT_REKON_DANA T3
 	WHERE
 		T3.NO_RESI = SUBSTR(T2.TRANSACTIONID,-12) AND T3. REKON_STATUS_ID = 'MATCH')
-	AND NOT EXISTS (SELECT * FROM BSI_REKON.FLAG_MATCH_DANA V WHERE V.NO_RESI = SUBSTR(T2.TRANSACTIONID,-12) AND V.FLAG_REKON = 'UNMATCH')
+	AND NOT EXISTS (SELECT * FROM ODIFIN.FLAG_MATCH_DANA V WHERE V.NO_RESI = SUBSTR(T2.TRANSACTIONID,-12) AND V.FLAG_REKON = 'UNMATCH')
 GROUP BY
 	T2.TRANSACTIONID,
 	T2.NETCLEARINGAMOUNT) WHERE FLAG_REKON = 'UNMATCH'</sql>
@@ -545,7 +545,7 @@ GROUP BY
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
       <sendOneStatement>F</sendOneStatement>
-      <connection>rekon_bsi</connection>
+      <connection>odi</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>

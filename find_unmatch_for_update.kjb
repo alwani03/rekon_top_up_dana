@@ -1,71 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <job>
-  <name>rekon_sisi_bsi</name>
+  <name>find_unmatch_for_update</name>
   <description/>
   <extended_description/>
   <job_version/>
   <directory>/</directory>
   <created_user>-</created_user>
-  <created_date>2024/04/28 14:27:21.201</created_date>
+  <created_date>2024/05/12 16:27:22.493</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2024/04/28 14:27:21.201</modified_date>
+  <modified_date>2024/05/12 16:27:22.493</modified_date>
   <parameters>
     </parameters>
-  <connection>
-    <name>odi</name>
-    <server>159.138.91.210</server>
-    <type>ORACLE</type>
-    <access>Native</access>
-    <database>ODISYS</database>
-    <port>1220</port>
-    <username>XINTL</username>
-    <password>Encrypted 2be98afc83ac68191a018a0588f98aecf</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>IS_CLUSTERED</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>PORT_NUMBER</code>
-        <attribute>1220</attribute>
-      </attribute>
-      <attribute>
-        <code>PRESERVE_RESERVED_WORD_CASE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>QUOTE_ALL_FIELDS</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>STRICT_NUMBER_38_INTERPRETATION</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>USE_POOLING</code>
-        <attribute>N</attribute>
-      </attribute>
-    </attributes>
-  </connection>
   <slaveservers>
     </slaveservers>
   <job-log-table>
@@ -359,8 +304,86 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>80</xloc>
-      <yloc>160</yloc>
+      <xloc>48</xloc>
+      <yloc>192</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>update_sisi_bsi</name>
+      <description/>
+      <type>TRANS</type>
+      <attributes/>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>${Internal.Entry.Current.Directory}/update_sisi_bsi.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <run_configuration>Pentaho local</run_configuration>
+      <suppress_result_data>N</suppress_result_data>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>320</xloc>
+      <yloc>192</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>update_sisi_dana</name>
+      <description/>
+      <type>TRANS</type>
+      <attributes/>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>${Internal.Entry.Current.Directory}/update_sisi_dana.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <run_configuration>Pentaho local</run_configuration>
+      <suppress_result_data>N</suppress_result_data>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>496</xloc>
+      <yloc>192</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -398,188 +421,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>256</xloc>
-      <yloc>160</yloc>
-      <attributes_kjc/>
-    </entry>
-    <entry>
-      <name>insert_id_rekon</name>
-      <description/>
-      <type>SQL</type>
-      <attributes/>
-      <sql>INSERT
-	INTO
-	ODIFIN.RESULT_REKON (ID,
-	REKON_DATE,
-	GROUP_ID,
-	MODUL_ID,
-	MODUL_NAME,
-	BILLER_ID,
-	BILLER_NAME,
-	BILLER_TYPE,
-	PAYMENT_TYPE)
-VALUES ('${ID_REKON}',
-sysdate,
-1,
-'payment_direct',
-'Payment Direct',
-'dana',
-'dana',
-'dana',
-NULL)</sql>
-      <useVariableSubstitution>T</useVariableSubstitution>
-      <sqlfromfile>F</sqlfromfile>
-      <sqlfilename/>
-      <sendOneStatement>F</sendOneStatement>
-      <connection>odi</connection>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>480</xloc>
-      <yloc>160</yloc>
-      <attributes_kjc/>
-    </entry>
-    <entry>
-      <name>proses_rekon_bsi</name>
-      <description/>
-      <type>SQL</type>
-      <attributes/>
-      <sql>INSERT 
-	INTO ODIFIN.RESULT_REKON_DANA_T24 
-	(
-	NO_RESI,
-	AMOUNT,
-	FEE_TRX,
-	RECID_FT,
-	VA,
-	DEBIT_ACCT_NO,
-	CREDIT_ACCT_NO,
-	CABANG_REK_DEBET,
-	CCY,
-	CO_CD,
-	NARRATIVE,
-	PAYMENT_DETAILS,
-	TRX_DATE_TIME,
-	REKON_ID,
-	MATCH_KEY,
-	REKON_STATUS_ID,
-	UPDATED_BY,
-	UPDATED_BY_NAME,
-	UPDATED_AT,
-	ADMIN_FEE
-)
-SELECT
-	 SUBSTR(T1.PAYMENT_DETAILS,1,12) AS NO_RESI,
-	 	NVL(SUM(T1.AMOUNT_VALIDASI),0) AS AMOUNT,
-	 ODIFIN.GET_FEE_TRX(T1.PAYMENT_DETAILS) AS FEE_TRX,
-	 ODIFIN.GET_DATA(T1.PAYMENT_DETAILS, 'RECID_FT') AS RECID_FT,
-	 REGEXP_REPLACE(REPLACE(T1.PAYMENT_DETAILS , ' ', ''), '(\d+)\-(\d+)\-(\d+)\-.+', '\2') AS VA,
-	 ODIFIN.GET_DATA(T1.PAYMENT_DETAILS, 'DEBIT_ACC_NO') AS DEBIT_ACCT_NO,
-	 ODIFIN.GET_DATA(T1.PAYMENT_DETAILS, 'CREDIT_ACC_NO') AS CREDIT_ACCT_NO,
-	 ODIFIN.GET_DATA(T1.PAYMENT_DETAILS, 'CABANG') AS CABANG_REK_DEBET,
-	 'IDR' AS CCY,
-	 ODIFIN.GET_DATA(T1.PAYMENT_DETAILS, 'CABANG') AS CO_CD,
-	 '' AS NARRATIVE,
-	 T1.PAYMENT_DETAILS,
-	 TO_DATE(ODIFIN.GET_DATA(T1.PAYMENT_DETAILS, 'TRX_DATE_TIME'),'YYYY-MM-DD') AS TRX_DATE_TIME,
-	 '${ID_REKON}' AS REKON_ID,
-	 SUBSTR(T1.PAYMENT_DETAILS,1,12) AS MATCH_KEY,
-	CASE
-		WHEN SUM(T1.AMOUNT_VALIDASI) = T2.NETCLEARINGAMOUNT AND T3.FLAG_REKON IS NULL
-			THEN 'MATCH'
-		WHEN SUM(T1.AMOUNT_VALIDASI) = T2.NETCLEARINGAMOUNT AND T3.FLAG_REKON IS NOT NULL
-			THEN 'MATCH H+1'
-		WHEN SUM(T1.AMOUNT_VALIDASI) != T2.NETCLEARINGAMOUNT AND T3.FLAG_REKON IS NOT NULL
-			THEN 'UNMATCH H-1'
-		ELSE 'UNMATCH'
-	END REKON_STATUS_ID,
-	NULL UPDATED_BY,
-	NULL UPDATED_BY_NAME,
-	NULL UPDATED_AT,
-	NVL(ODIFIN.GET_ADMIN(T1.PAYMENT_DETAILS),0) AS ADMIN_FEE
-FROM
-	ODIFIN.CALCULATE_DANA T1
-LEFT JOIN ODIFIN.SOURCE_TOPUP_DANA T2 ON
-	SUBSTR(T1.PAYMENT_DETAILS, 1, 12) = SUBSTR(T2.TRANSACTIONID,-12)
-LEFT JOIN ODIFIN.FLAG_MATCH_MIS  T3
-	ON SUBSTR(T1.PAYMENT_DETAILS, 1, 12) = T3.NO_RESI
-	WHERE TO_DATE(T1.VALUE_DT,'yyyy/mm/dd') BETWEEN  TO_DATE('${VAL_DATE}', 'yyyy/mm/dd') - 1
-	AND TO_DATE ('${VAL_DATE}', 'yyyy/mm/dd')  + 1
-	AND NOT EXISTS (SELECT * FROM ODIFIN.RESULT_REKON_DANA_T24 V WHERE V.PAYMENT_DETAILS = T1.PAYMENT_DETAILS AND V.REKON_STATUS_ID = 'MATCH')
-	GROUP BY T1.PAYMENT_DETAILS, T2.NETCLEARINGAMOUNT, T3.FLAG_REKON</sql>
-      <useVariableSubstitution>T</useVariableSubstitution>
-      <sqlfromfile>F</sqlfromfile>
-      <sqlfilename/>
-      <sendOneStatement>F</sendOneStatement>
-      <connection>odi</connection>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>480</xloc>
-      <yloc>304</yloc>
-      <attributes_kjc/>
-    </entry>
-    <entry>
-      <name>insert_table_flag_bsi</name>
-      <description/>
-      <type>SQL</type>
-      <attributes/>
-      <sql>INSERT INTO ODIFIN.FLAG_MATCH_MIS(NO_RESI,FLAG_REKON)
-SELECT * FROM (SELECT
-	 SUBSTR(T1.PAYMENT_DETAILS,1,12) AS NO_RESI,
-	 CASE
-		WHEN SUM(T1.AMOUNT_VALIDASI) = T2.NETCLEARINGAMOUNT 
-			THEN 'MATCH'
-		WHEN SUM(T1.AMOUNT_VALIDASI) = T2.NETCLEARINGAMOUNT 
-			THEN 'MATCH + 1'
-		ELSE 'UNMATCH'
-	END FLAG_REKON
-FROM
-	ODIFIN.CALCULATE_DANA T1
-LEFT JOIN ODIFIN.SOURCE_TOPUP_DANA T2 ON
-	SUBSTR(T1.PAYMENT_DETAILS, 1, 12) = SUBSTR(T2.TRANSACTIONID,-12)
-WHERE
-	TO_DATE(T1.VALUE_DT, 'yyyy/mm/dd') BETWEEN TO_DATE('${VAL_DATE}', 'yyyy/mm/dd') - 1
-	AND TO_DATE ('${VAL_DATE}','yyyy/mm/dd') + 1
-	AND NOT EXISTS (
-	SELECT
-		*
-	FROM
-		ODIFIN.RESULT_REKON_DANA_T24 T3
-	WHERE
-		T3.PAYMENT_DETAILS = T1.PAYMENT_DETAILS AND T3. REKON_STATUS_ID = 'MATCH')
-	AND NOT EXISTS (SELECT * FROM ODIFIN.FLAG_MATCH_MIS V WHERE V.NO_RESI = SUBSTR(T1.PAYMENT_DETAILS,1,12) AND V.FLAG_REKON = 'UNMATCH')
-GROUP BY
-	T1.PAYMENT_DETAILS,
-	T2.NETCLEARINGAMOUNT) WHERE FLAG_REKON = 'UNMATCH'</sql>
-      <useVariableSubstitution>T</useVariableSubstitution>
-      <sqlfromfile>F</sqlfromfile>
-      <sqlfilename/>
-      <sendOneStatement>F</sendOneStatement>
-      <connection>odi</connection>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>672</xloc>
-      <yloc>304</yloc>
-      <attributes_kjc/>
-    </entry>
-    <entry>
-      <name>delete_source_tmp</name>
-      <description/>
-      <type>SQL</type>
-      <attributes/>
-      <sql>TRUNCATE TABLE ODIFIN.SOURCE_TOPUP_DANA_TEMP</sql>
-      <useVariableSubstitution>T</useVariableSubstitution>
-      <sqlfromfile>F</sqlfromfile>
-      <sqlfilename/>
-      <sendOneStatement>F</sendOneStatement>
-      <connection>odi</connection>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>672</xloc>
-      <yloc>448</yloc>
+      <xloc>192</xloc>
+      <yloc>192</yloc>
       <attributes_kjc/>
     </entry>
     <entry>
@@ -590,12 +433,21 @@ GROUP BY
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>872</xloc>
-      <yloc>448</yloc>
+      <xloc>696</xloc>
+      <yloc>192</yloc>
       <attributes_kjc/>
     </entry>
   </entries>
   <hops>
+    <hop>
+      <from>update_sisi_bsi</from>
+      <to>update_sisi_dana</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
     <hop>
       <from>Start</from>
       <to>set_variable</to>
@@ -607,42 +459,15 @@ GROUP BY
     </hop>
     <hop>
       <from>set_variable</from>
-      <to>insert_id_rekon</to>
+      <to>update_sisi_bsi</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>insert_id_rekon</from>
-      <to>proses_rekon_bsi</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>proses_rekon_bsi</from>
-      <to>insert_table_flag_bsi</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>insert_table_flag_bsi</from>
-      <to>delete_source_tmp</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>delete_source_tmp</from>
+      <from>update_sisi_dana</from>
       <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
