@@ -1,0 +1,83 @@
+DEBUG: Found JRE at the current folder
+DEBUG: _PENTAHO_JAVA_HOME=N:\file_alwani\data-integration\jre
+DEBUG: _PENTAHO_JAVA=N:\file_alwani\data-integration\jre\bin\java.exe
+
+N:\file_alwani\data-integration>"N:\file_alwani\data-integration\jre\bin\java.exe"   "-Xms1024m" "-Xmx2048m" "-Djava.library.path=libswt\win64;/bin" "-Djava.endorsed.dirs=N:\file_alwani\data-integration\jre\jre\lib\endorsed;N:\file_alwani\data-integration\jre\lib\endorsed;N:\file_alwani\data-integration\system\karaf\lib\endorsed"  "-DKETTLE_HOME=" "-DKETTLE_REPOSITORY=" "-DKETTLE_USER=" "-DKETTLE_PASSWORD=" "-DKETTLE_PLUGIN_PACKAGES=" "-DKETTLE_LOG_SIZE_LIMIT=" "-DKETTLE_JNDI_ROOT=" -jar launcher\launcher.jar -lib ..\libswt\win64  -main org.pentaho.di.kitchen.Kitchen -initialDir "N:\file_alwani\Rekon\dana_v3\sh"\ -level:basic -file:N:/file_alwani/Rekon/dana_v3/inject_data.kjb -norep 
+2024/05/02 15:41:29 - Kitchen - Logging is at level : Basic
+2024/05/02 15:41:30 - Kitchen - Start of run.
+2024/05/02 15:41:48 - inject_data - Start of job execution
+2024/05/02 15:41:48 - inject_data - Starting entry [set_variable]
+2024/05/02 15:41:50 - set_variable - Using run configuration [Pentaho local]
+2024/05/02 15:41:50 - set_variable - Dispatching started for transformation [set_variable]
+2024/05/02 15:41:53 - get_variable.0 - Finished reading query, closing connection
+2024/05/02 15:41:53 - Set variables.0 - Setting environment variables...
+2024/05/02 15:41:53 - Set variables.0 - Set variable ID_REKON to value [dana02050241542184218]
+2024/05/02 15:41:53 - Set variables.0 - Set variable VAL_DATE to value [20231227]
+2024/05/02 15:41:53 - Set variables.0 - Finished after 1 rows.
+2024/05/02 15:41:53 - Set variables.0 - Finished processing (I=0, O=0, R=1, W=1, U=0, E=0)
+2024/05/02 15:41:53 - get_variable.0 - Finished processing (I=1, O=0, R=0, W=1, U=0, E=0)
+2024/05/02 15:41:53 - inject_data - Starting entry [Get a file with SFTP]
+2024/05/02 15:42:00 - inject_data - Starting entry [inject_data_dana_tmp]
+2024/05/02 15:42:00 - inject_data_dana_tmp - Using run configuration [Pentaho local]
+2024/05/02 15:42:00 - inject_data_tmp - Dispatching started for transformation [inject_data_tmp]
+2024/05/02 15:42:00 - insert_data_source_tmp.0 - Connected to database [rekon_bsi] (commit=1000)
+2024/05/02 15:42:00 - get_data_csv.0 - Finished processing (I=0, O=0, R=0, W=0, U=0, E=1)
+2024/05/02 15:42:00 - inject_data_tmp - Transformation detected one or more steps with errors.
+2024/05/02 15:42:00 - inject_data_tmp - Transformation is killing the other steps!
+2024/05/02 15:42:00 - inject_data - Finished job entry [inject_data_dana_tmp] (result=[false])
+2024/05/02 15:42:00 - inject_data - Finished job entry [Get a file with SFTP] (result=[false])
+2024/05/02 15:42:00 - inject_data - Finished job entry [set_variable] (result=[false])
+2024/05/02 15:42:00 - inject_data - Job execution finished
+2024/05/02 15:42:00 - Kitchen - Finished!
+2024/05/02 15:42:00 - Kitchen - Start=2024/05/02 15:41:48.336, Stop=2024/05/02 15:42:00.995
+2024/05/02 15:42:00 - Kitchen - Processing ended after 12 seconds.
+DEBUG: Found JRE at the current folder
+DEBUG: _PENTAHO_JAVA_HOME=N:\file_alwani\data-integration\jre
+DEBUG: _PENTAHO_JAVA=N:\file_alwani\data-integration\jre\bin\java.exe
+
+N:\file_alwani\data-integration>"N:\file_alwani\data-integration\jre\bin\java.exe"   "-Xms1024m" "-Xmx2048m" "-Djava.library.path=libswt\win64;/bin" "-Djava.endorsed.dirs=N:\file_alwani\data-integration\jre\jre\lib\endorsed;N:\file_alwani\data-integration\jre\lib\endorsed;N:\file_alwani\data-integration\system\karaf\lib\endorsed"  "-DKETTLE_HOME=" "-DKETTLE_REPOSITORY=" "-DKETTLE_USER=" "-DKETTLE_PASSWORD=" "-DKETTLE_PLUGIN_PACKAGES=" "-DKETTLE_LOG_SIZE_LIMIT=" "-DKETTLE_JNDI_ROOT=" -jar launcher\launcher.jar -lib ..\libswt\win64  -main org.pentaho.di.kitchen.Kitchen -initialDir "N:\file_alwani\Rekon\dana_v3\sh"\ -level:basic -file:N:/file_alwani/Rekon/dana_v3/inject_data.kjb -norep 
+2024/05/02 15:43:53 - Kitchen - Logging is at level : Basic
+2024/05/02 15:43:53 - Kitchen - Start of run.
+2024/05/02 15:43:56 - inject_data - Start of job execution
+2024/05/02 15:43:56 - inject_data - Starting entry [set_variable]
+2024/05/02 15:43:58 - set_variable - Using run configuration [Pentaho local]
+2024/05/02 15:43:58 - set_variable - Dispatching started for transformation [set_variable]
+2024/05/02 15:43:59 - get_variable.0 - Finished reading query, closing connection
+2024/05/02 15:43:59 - Set variables.0 - Setting environment variables...
+2024/05/02 15:43:59 - Set variables.0 - Set variable ID_REKON to value [dana02050241544254425]
+2024/05/02 15:43:59 - Set variables.0 - Set variable VAL_DATE to value [20231227]
+2024/05/02 15:43:59 - Set variables.0 - Finished after 1 rows.
+2024/05/02 15:43:59 - Set variables.0 - Finished processing (I=0, O=0, R=1, W=1, U=0, E=0)
+2024/05/02 15:43:59 - get_variable.0 - Finished processing (I=1, O=0, R=0, W=1, U=0, E=0)
+2024/05/02 15:43:59 - inject_data - Starting entry [Get a file with SFTP]
+2024/05/02 15:44:06 - inject_data - Starting entry [inject_data_dana_tmp]
+2024/05/02 15:44:06 - inject_data_dana_tmp - Using run configuration [Pentaho local]
+2024/05/02 15:44:06 - inject_data_tmp - Dispatching started for transformation [inject_data_tmp]
+2024/05/02 15:44:06 - insert_data_source_tmp.0 - Connected to database [rekon_bsi] (commit=1000)
+2024/05/02 15:44:06 - get_data_csv.0 - Header row skipped in file 'file:///N:/file_alwani/Rekon/dana_v3/SETTLEMENT_MDRSC1ID_01_20231227.csv'
+2024/05/02 15:44:09 - get_data_csv.0 - Line number : 50000
+2024/05/02 15:44:10 - change_data_type.0 - linenr 50000
+2024/05/02 15:44:11 - insert_data_source_tmp.0 - linenr 50000
+2024/05/02 15:44:13 - get_data_csv.0 - Line number : 100000
+2024/05/02 15:44:14 - change_data_type.0 - linenr 100000
+2024/05/02 15:44:15 - insert_data_source_tmp.0 - linenr 100000
+2024/05/02 15:44:15 - get_data_csv.0 - Finished processing (I=120376, O=0, R=0, W=120375, U=0, E=0)
+2024/05/02 15:44:16 - change_data_type.0 - Finished processing (I=0, O=0, R=120375, W=120375, U=0, E=0)
+2024/05/02 15:44:17 - insert_data_source_tmp.0 - Finished processing (I=0, O=120375, R=120375, W=120375, U=0, E=0)
+2024/05/02 15:44:17 - inject_data - Starting entry [insert_data_source]
+2024/05/02 15:44:17 - inject_data - Starting entry [insert_table_perhitungan_t24]
+2024/05/02 15:44:26 - inject_data - Starting entry [delete_data_unmatch_bsi]
+2024/05/02 15:44:37 - inject_data - Starting entry [delete_unmatch_dana]
+2024/05/02 15:44:37 - inject_data - Starting entry [Success]
+2024/05/02 15:44:37 - inject_data - Finished job entry [Success] (result=[true])
+2024/05/02 15:44:37 - inject_data - Finished job entry [delete_unmatch_dana] (result=[true])
+2024/05/02 15:44:37 - inject_data - Finished job entry [delete_data_unmatch_bsi] (result=[true])
+2024/05/02 15:44:37 - inject_data - Finished job entry [insert_table_perhitungan_t24] (result=[true])
+2024/05/02 15:44:37 - inject_data - Finished job entry [insert_data_source] (result=[true])
+2024/05/02 15:44:37 - inject_data - Finished job entry [inject_data_dana_tmp] (result=[true])
+2024/05/02 15:44:37 - inject_data - Finished job entry [Get a file with SFTP] (result=[true])
+2024/05/02 15:44:37 - inject_data - Finished job entry [set_variable] (result=[true])
+2024/05/02 15:44:37 - inject_data - Job execution finished
+2024/05/02 15:44:37 - Kitchen - Finished!
+2024/05/02 15:44:37 - Kitchen - Start=2024/05/02 15:43:56.791, Stop=2024/05/02 15:44:37.975
+2024/05/02 15:44:37 - Kitchen - Processing ended after 41 seconds.

@@ -1,0 +1,28 @@
+2024/04/28 16:44:53 - Kitchen - Logging is at level : Basic
+2024/04/28 16:44:53 - Kitchen - Start of run.
+2024/04/28 16:44:55 - rekon_sisi_bsi - Start of job execution
+2024/04/28 16:44:55 - rekon_sisi_bsi - Starting entry [set_variable]
+2024/04/28 16:44:55 - set_variable - Using run configuration [Pentaho local]
+2024/04/28 16:44:55 - set_variable - Dispatching started for transformation [set_variable]
+2024/04/28 16:44:56 - get_variable.0 - Finished reading query, closing connection
+2024/04/28 16:44:56 - Set variables.0 - Setting environment variables...
+2024/04/28 16:44:56 - Set variables.0 - Set variable ID_REKON to value [dana28040241644564456]
+2024/04/28 16:44:56 - Set variables.0 - Set variable VAL_DATE to value [20231227]
+2024/04/28 16:44:56 - Set variables.0 - Finished after 1 rows.
+2024/04/28 16:44:56 - Set variables.0 - Finished processing (I=0, O=0, R=1, W=1, U=0, E=0)
+2024/04/28 16:44:56 - get_variable.0 - Finished processing (I=1, O=0, R=0, W=1, U=0, E=0)
+2024/04/28 16:44:56 - rekon_sisi_bsi - Starting entry [insert_id_rekon]
+2024/04/28 16:44:57 - rekon_sisi_bsi - Starting entry [proses_rekon_bsi]
+2024/04/28 16:45:53 - rekon_sisi_bsi - Starting entry [insert_table_flag_bsi]
+2024/04/28 16:45:58 - rekon_sisi_bsi - Starting entry [delete_source_tmp]
+2024/04/28 16:45:59 - rekon_sisi_bsi - Starting entry [Success]
+2024/04/28 16:45:59 - rekon_sisi_bsi - Finished job entry [Success] (result=[true])
+2024/04/28 16:45:59 - rekon_sisi_bsi - Finished job entry [delete_source_tmp] (result=[true])
+2024/04/28 16:45:59 - rekon_sisi_bsi - Finished job entry [insert_table_flag_bsi] (result=[true])
+2024/04/28 16:45:59 - rekon_sisi_bsi - Finished job entry [proses_rekon_bsi] (result=[true])
+2024/04/28 16:45:59 - rekon_sisi_bsi - Finished job entry [insert_id_rekon] (result=[true])
+2024/04/28 16:45:59 - rekon_sisi_bsi - Finished job entry [set_variable] (result=[true])
+2024/04/28 16:45:59 - rekon_sisi_bsi - Job execution finished
+2024/04/28 16:45:59 - Kitchen - Finished!
+2024/04/28 16:45:59 - Kitchen - Start=2024/04/28 16:44:55.575, Stop=2024/04/28 16:45:59.038
+2024/04/28 16:45:59 - Kitchen - Processing ended after 1 minutes and 3 seconds (63 seconds total).

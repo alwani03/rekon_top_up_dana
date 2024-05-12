@@ -1,0 +1,1 @@
+sh /Applications/data-integration/kitchen.sh -level:basic -file:/Users/achmadalwani/Documents/document_work/top_up_dana/Job/rekon_sisi_dana.kjb -norep >> /Users/achmadalwani/Documents/document_work/top_up_dana/log/rekon_sisi_dana.log

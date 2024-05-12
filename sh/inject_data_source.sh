@@ -1,0 +1,1 @@
+call N:/file_alwani/data-integration/kitchen.bat -level:basic -file:N:/file_alwani/Rekon/dana_v3/inject_data.kjb -norep >> N:/file_alwani/Rekon/dana_v3/log/inject_data.log
